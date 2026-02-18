@@ -1,92 +1,71 @@
-🚛 FrotaPro
+#🚛 FrotaPro
 
-Plataforma SaaS Enterprise para Gestão Inteligente de Transportes e Frotas.
+> Plataforma SaaS Enterprise para Gestão Inteligente de Transportes e Frotas.
 
-O FrotaPro é um sistema SaaS multi-tenant desenvolvido para transportadoras e empresas com frota própria, permitindo controle completo de:
+O **FrotaPro** é um sistema SaaS multi-tenant desenvolvido para transportadoras e empresas com frota própria, permitindo controle completo de:
 
-🚚 Viagens
-
-👨‍✈️ Motoristas
-
-🚛 Veículos
-
-⛽ Abastecimentos
-
-💰 Despesas e Receitas
-
-📊 Indicadores financeiros
-
-📈 Analytics operacional
+- 🚚 Viagens
+- 👨‍✈️ Motoristas
+- 🚛 Veículos
+- ⛽ Abastecimentos
+- 💰 Despesas e Receitas
+- 📊 Indicadores financeiros
+- 📈 Analytics operacional
 
 Construído com arquitetura escalável e preparada para ambientes enterprise.
+---
 
-🏗️ Arquitetura
+# 🏗️ Arquitetura
 
 O projeto segue:
 
-✅ DDD (Domain-Driven Design)
+- ✅ DDD (Domain-Driven Design)
+- ✅ Clean Architecture
+- ✅ Monólito Modular (Microservices Ready)
+- ✅ Multi-Tenant (Shared Database + Tenant ID)
+- ✅ Cloud Ready
+- ✅ Observabilidade integrada
+---
 
-✅ Clean Architecture
+# 🧱 Stack Tecnológica
 
-✅ Monólito Modular (Microservices Ready)
+## 🔹 Backend
 
-✅ Multi-Tenant (Shared Database + Tenant ID)
+- Java 21
+- Spring Boot 4.0.2
+- Spring Security + JWT
+- Spring Data JPA
+- PostgreSQL
+- Flyway
+- Redis
+- Hibernate Envers
+- OpenAPI (Swagger)
+- Micrometer + Prometheus
 
-✅ Cloud Ready
+## 🔹 Frontend
 
-✅ Observabilidade integrada
+- Angular
+- TypeScript
+- Angular Material
+- Chart.js / ngx-charts
 
-🧱 Stack Tecnológica
-🔹 Backend
+## 🔹 Infraestrutura
 
-Java 21
+- Docker
+- Docker Compose
+- MinIO (Storage)
+- Preparado para Kubernetes
+---
 
-Spring Boot 3
-
-Spring Security + JWT
-
-Spring Data JPA
-
-PostgreSQL
-
-Flyway
-
-Redis
-
-Hibernate Envers
-
-OpenAPI (Swagger)
-
-Micrometer + Prometheus
-
-🔹 Frontend
-
-Angular
-
-TypeScript
-
-Angular Material
-
-Chart.js / ngx-charts
-
-🔹 Infraestrutura
-
-Docker
-
-Docker Compose
-
-MinIO (Storage)
-
-Preparado para Kubernetes
-
-🔐 Multi-Tenancy
+# 🔐 Multi-Tenancy
 
 O FrotaPro utiliza o modelo:
 
-Single Database + Shared Schema + Tenant ID
+**Single Database + Shared Schema + Tenant ID**
 
 Cada registro possui:
 
+'''sql
 empresa_id UUID NOT NULL
 
 
