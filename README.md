@@ -1,4 +1,4 @@
-#🚛 FrotaPro
+# 🚛 FrotaPro
 
 > Plataforma SaaS Enterprise para Gestão Inteligente de Transportes e Frotas.
 
@@ -13,6 +13,7 @@ O **FrotaPro** é um sistema SaaS multi-tenant desenvolvido para transportadoras
 - 📈 Analytics operacional
 
 Construído com arquitetura escalável e preparada para ambientes enterprise.
+
 ---
 
 # 🏗️ Arquitetura
@@ -25,6 +26,7 @@ O projeto segue:
 - ✅ Multi-Tenant (Shared Database + Tenant ID)
 - ✅ Cloud Ready
 - ✅ Observabilidade integrada
+
 ---
 
 # 🧱 Stack Tecnológica
@@ -65,14 +67,17 @@ O FrotaPro utiliza o modelo:
 
 Cada registro possui:
 
-'''sql
+```sql
 empresa_id UUID NOT NULL
-
+```
 
 O tenant é resolvido via JWT e aplicado automaticamente nos filtros Hibernate.
 
-📂 Estrutura do Projeto (Backend)
-com.frotapro
+---
+
+# 📂 Estrutura do Projeto (Backend)
+```
+br.com.rlag.frotapro
 │
 ├── application
 │   ├── usecase
@@ -95,153 +100,148 @@ com.frotapro
 └── interfaces
     └── rest
 
-📊 Módulos do Sistema
-🔹 IAM (Identidade e Acesso)
+```
 
-Empresas
+# 📊 Módulos do Sistema
 
-Usuários
+## 🔹 IAM (Identidade e Acesso)
 
-Perfis
+- Empresas
+- Usuários
+- Perfis
+- Permissões
+- Planos e Assinaturas
 
-Permissões
+## 🔹 Operações
 
-Planos e Assinaturas
+- Viagens
+- Motoristas
+- Veículos
+- Clientes
 
-🔹 Operações
+## 🔹 Financeiro
 
-Viagens
+- Despesas
+- Adiantamentos
+- Receitas
+- Relatórios
 
-Motoristas
+## 🔹 Combustível
 
-Veículos
+- Abastecimento
+- ARLA
+- Custo por KM
+- Consumo médio
 
-Clientes
+## 🔹 Analytics
 
-🔹 Financeiro
+- Dashboard operacional
+- Indicadores de lucro
+- Ranking de motoristas
+- Performance da frota
 
-Despesas
+---
 
-Adiantamentos
+# 🚀 Como Executar Localmente
 
-Receitas
-
-Relatórios
-
-🔹 Combustível
-
-Abastecimento
-
-ARLA
-
-Custo por KM
-
-Consumo médio
-
-🔹 Analytics
-
-Dashboard operacional
-
-Indicadores de lucro
-
-Ranking de motoristas
-
-Performance da frota
-
-🚀 Como Executar Localmente
-1️⃣ Subir infraestrutura
+## 1️⃣ Subir infraestrutura
+```
 docker-compose up -d
-
+```
 
 Isso iniciará:
 
-PostgreSQL
+- PostgreSQL
+- Redis
+- MinIO
 
-Redis
+## 2️⃣ Rodar a aplicação
 
-MinIO
-
-2️⃣ Rodar a aplicação
+```
 ./mvnw spring-boot:run
-
+```
 
 ou
 
+```
 mvn clean install
 java -jar target/frotapro.jar
+```
 
-3️⃣ Acessar documentação
+## 3️⃣ Acessar documentação
 
 Swagger:
-
+```
 http://localhost:8080/swagger-ui.html
-
+```
 
 Actuator:
-
+```
 http://localhost:8080/actuator
+```
+---
 
-🔎 Observabilidade
+# 🔎 Observabilidade
 
-Métricas: /actuator/prometheus
+- Métricas: /actuator/prometheus
+- Logs estruturados
+- Correlation ID por requisição
+- Preparado para Grafana
 
-Logs estruturados
+---
 
-Correlation ID por requisição
+# 🔄 Roadmap
 
-Preparado para Grafana
+## MVP
 
-🔄 Roadmap
-MVP
+- Autenticação
+- CRUD básico
+- Dashboard inicial
 
-Autenticação
+## Fase 2
 
-CRUD básico
+- Upload de comprovantes
+- Relatórios avançados
+- Controle de consumo
 
-Dashboard inicial
+## Fase 3
 
-Fase 2
+- Microserviços
+- API Gateway
+- Event-driven architecture
+- Billing automático
 
-Upload de comprovantes
+---
 
-Relatórios avançados
+# 🔐 Segurança
 
-Controle de consumo
+- JWT com empresa_id
+- RBAC (Role Based Access Control)
+- Auditoria com Envers
+- Rate limiting com Redis
 
-Fase 3
+---
 
-Microserviços
+# 📌 Diferenciais
 
-API Gateway
+- Cálculo automático de lucro por viagem
+- Custo por KM em tempo real
+- Visão 360° da frota
+- Arquitetura enterprise desde o início
 
-Event-driven architecture
+---
 
-Billing automático
-
-🔐 Segurança
-
-JWT com empresa_id
-
-RBAC (Role Based Access Control)
-
-Auditoria com Envers
-
-Rate limiting com Redis
-
-📌 Diferenciais
-
-Cálculo automático de lucro por viagem
-
-Custo por KM em tempo real
-
-Visão 360° da frota
-
-Arquitetura enterprise desde o início
-
-🏢 Licença
+# 🏢 Licença
 
 Proprietary Software – FrotaPro
 
-👨‍💻 Autor
+---
 
-Projeto idealizado para construção de um SaaS escalável de gestão de transportes.
+# 🏢 Sobre a FrotaPro
+
+FrotaPro é um produto desenvolvido e mantido por RLAG.
+
+© 2026 FrotaPro. Todos os direitos reservados.
+
+
+--- 
